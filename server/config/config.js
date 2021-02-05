@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'dev') {
 
 }else{
 
-    urlDB= 'mongodb+srv://firstUser-01:bgsI61ja7VDJHNvq@cluster-01.zsupo.mongodb.net/cafe?retryWrites=true&w=majority'
+    urlDB= process.env.MONGO_URI
 }
 
 process.env.URLDB = urlDB
