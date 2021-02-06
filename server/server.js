@@ -12,6 +12,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
  
+// configuracion global de rutas
+app.use( require('./routes/index'));
+
 
 mongoose.connect(process.env.URLDB, {
   useNewUrlParser: true,
@@ -23,7 +26,7 @@ mongoose.connect(process.env.URLDB, {
     console.log('base de datos ONLINE');
 });
 
-app.use( require('./routes/usuario') );
+
 
 app.listen(process.env.PORT,()=>{
 
